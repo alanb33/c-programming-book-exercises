@@ -140,7 +140,7 @@ void measure_int() {
 void measure_long() {
     unsigned long int uli = 0;
 
-    long long int limit = 0;
+    long int limit = 0;
     int max_i = 100;    // maximum attempts, to prevent infinite loop
     short limit_found = 0;
     for (int exp = 1; (limit_found == 0) && (exp < max_i); exp++) {
