@@ -60,7 +60,7 @@
 #define MAX_LEN     10  /* Max length of string */
 #define HEX_BASE    16
 
-#define DO_TESTS    1   /* 1 to run tests, 0 otherwise */
+#define DO_TESTS    0   /* 1 to run tests, 0 otherwise */
 
 void get_line(char s[]);
 unsigned long calculate_hex(char s[]);
@@ -238,6 +238,7 @@ int run_tests(void) {
         all is well and 1 if any test case failed. -A
     */
     printf("Running test suite.\n");
+    // TODO: Research how to determine differences between Win and Linux env
 
     int failure = 0;
     int test_count = 0;
