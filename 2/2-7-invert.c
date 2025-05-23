@@ -101,11 +101,18 @@ int main(void) {
     bits at position p.
 */
 uint8_t invert(uint8_t x, uint8_t p, uint8_t n) {
+    // The amount of bit movement necessary for left and right shifts.
     uint8_t shift_formula = p - n + 1;
-    uint8_t isolated_inverted = ~(x >> shift_formula) & ~(~0 << n);
-    uint8_t and_mask = ~(~(~0 << n) << shift_formula);
-    return (x & and_mask) | (isolated_inverted << shift_formula);
 
+    // Isolation and inversion of the selected bits in a single formula.
+    uint8_t isolated_inverted = ~(x >> shift_formula) & ~(~0 << n);
+
+    // Creation and positioning of an AND mask for the inverted bits.
+    uint8_t and_mask = ~(~(~0 << n) << shift_formula);
+
+    // Return the original x with the AND mask applied and the inverted bits
+    // OR'd into it.
+    return (x & and_mask) | (isolated_inverted << shift_formula);
 }
 
 /*
