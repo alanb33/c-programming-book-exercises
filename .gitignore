@@ -1,2 +1,5 @@
 *.exe
 .vscode
+
+# Don't upload my separate chapter study notes
+notes/
