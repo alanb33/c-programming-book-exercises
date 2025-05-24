@@ -1,5 +1,9 @@
 /*
-    Exercise 1-21
+    folding.c
+
+    Author: Alan Bailey
+    Date: May 24, 2025
+    Exercise 1-22
 
     Write a program to shorten long inputs into two or more shorter lines 
     after the the last non-blank character before the n-th column of input.

@@ -1,9 +1,15 @@
 /*
-    detab
+    detab.c
 
-    given an input, replace any occurance of \t with a fixed number of spaces.
+    Author: Alan Bailey
+    Date: May 17, 2025
+    Exercise 1-20
 
-        plan
+    given an input s, replace any occurance of \t with a fixed number of spaces.
+*/
+
+/*
+    Plan
 
     1. read a stream of input from the user until EOF.
     2. step through the string. if \t is encountered at any point, then insert

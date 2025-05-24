@@ -1,4 +1,8 @@
 /*
+    ranges.c
+
+    Author: Alan Bailey
+    Date: May 18, 2025
     Exercise 2-1
 
     Determine the ranges of char, short, int, and long, both signed and

@@ -1,7 +1,9 @@
 /*
     any.c
 
-    Alan Bailey, May 21, 2025
+    Author: Alan Bailey
+    Date: May 21, 2025
+    Exercise 2-5
 
     The function any(s1, s2) which returns the first location in s1 where any
     character in s2 occurs, or -1 if s1 contains no characters.

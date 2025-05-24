@@ -1,4 +1,8 @@
 /*
+    no-logicals.c
+
+    Author: Alan Bailey
+    Date: May 20, 2025
     Exercise 2-2
 
     Rewrite the following without AND or OR operators:
@@ -9,12 +13,13 @@
 
 #include <stdio.h>
 
-void get_line(char line[], int lim);
+#define LIMIT   100 /* Line length limit */
+
+void get_line(char line[]);
 
 int main(void) {
-    int lim = 100;
-    char line[lim];
-    get_line(line, lim);
+    char line[LIMIT];
+    get_line(line);
     printf("The line is: %s\n", line);
     return 0;
 }
@@ -37,7 +42,7 @@ int main(void) {
     some work to control that state.
 */
 
-void get_line(char line[], int lim) {
+void get_line(char line[]) {
     
     int stopping = 0;
     int i;
@@ -49,7 +54,7 @@ void get_line(char line[], int lim) {
             logical operators... though if that challenge should also extend
             to the body is a bit questionable. I'll do it here anyway. -A
         */
-        if (i == lim - 1) {
+        if (i == LIMIT - 1) {
             stopping = 1;
         };
 

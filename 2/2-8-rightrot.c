@@ -1,7 +1,9 @@
 /*
     rightrot.c
 
-    Alan Bailey, May 23, 2025
+    Author: Alan Bailey
+    Date: May 23, 2025
+    Exercise 2-8
 
     The function rightrot(x,n), which returns the value of the interger x
     rotated to the right by n positions.

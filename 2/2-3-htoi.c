@@ -1,7 +1,9 @@
 /*
     htoi.c
 
-    Alan Bailey, May 20, 2025
+    Author: Alan Bailey,
+    Date: May 20, 2025
+    Exercise 2-3
 
     Given a string in the format 0xNNNNNNNN, where N is one or more hex
     digits in the range of 0 to F, convert to integer equivalent. 0x/0X are

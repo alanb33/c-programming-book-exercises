@@ -1,7 +1,9 @@
 /*
     squeeze.c
 
-    Alan Bailey, May 20, 2025
+    Author: Alan Bailey
+    Date: May 20, 2025
+    Exercise 2-4
 
     Given a string s and r, remove any characters that appear in r from s.
 */

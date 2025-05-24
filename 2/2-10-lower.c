@@ -1,8 +1,9 @@
 /*
     lower.c
 
-    Alan Bailey
-    May 24, 2025
+    Author: Alan Bailey
+    Date: May 24, 2025
+    Exercise 2-10
 
     Challenge 2-10: Write a function to lower uppercase letters to
     lowercase letters by using a conditional statement (?:) instead of an

@@ -1,7 +1,9 @@
 /*
     invert.c
 
-    Alan Bailey, May 22, 2025
+    Author: Alan Bailey
+    Date: May 22, 2025
+    Exercise 2-7
 
     Write a function invert(x,p,n) that returns x with the n bits that begin
     at position p inverted, leaving the others unchanged.

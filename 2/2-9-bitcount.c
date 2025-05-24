@@ -3,6 +3,7 @@
 
     Author: Alan Bailey
     Date: May 23, 2025
+    Exercise 2-9
 
     In a two's complement number system, x &= (x-1) deletes the rightmost
     1-bit in x. Why's that?

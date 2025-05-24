@@ -1,6 +1,9 @@
 /*
-entab.c
-Exercise 1-21 of C Programming Language, 2nd Edition
+    entab.c
+
+    Author: Alan Bailey
+    Date: May 17, 2025
+    Exercise 1-21
 
     Given a string with spaces, replace strings of spaces with the minimum
     number of tabs and spaces to achieve the same spacing.
@@ -47,7 +50,9 @@ int main()
 */
 int parse_segment(char line[], int start_i)
 {
-    /* how to parse?
+
+/* 
+    how to parse?
     
     start-of-line spaces are ignorable. we only care if tracking mode is
     active when end of segment is reached.
@@ -76,7 +81,7 @@ int parse_segment(char line[], int start_i)
     else, return tracking_start_index + 1 to indicate that's where the next
         invocation should continue from.
 
-    */
+*/
    
     int i = start_i;
     int tr_mode = 0;
