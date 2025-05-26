@@ -144,5 +144,6 @@ void expand(char input[], char output[]) {
         output_i++;
     }
 
+    // terminate the string
     output[output_i] = '\0';
 }
