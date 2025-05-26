@@ -1,27 +1,14 @@
 /*
-    itoa.c
+    itoa-padded.c
 
     Alan Bailey
-    May 25, 2025
-    Exercise 3-4
+    May 26, 2025
+    Exercise 3-6
 
-    In a two's complement number system, the itoa definition provided in the C
-    Handbook does not handle the largest negative number, defined as 
-    -(2 ^ wordsize-1). Why not? And rewrite!
-*/
-
-/*
-    1. So, why not? In the declaration of the function, we see the following
-    few lines:
-
-    if ((sign = n) < 0)
-        n = -n;
-
-    Assume a wordsize of 8. This means that the largest negative number is
-    -128, and the largest positive number, conversely, is 127 (because 0 will
-    count as one of the numbers.) There's the problem! Flipping the number
-    directly works in all causes but the largest negative number because the
-    largest negative number will cause an overflow error.
+    This version of itoa, as copied from 3-4-itoa.c, accepts three arguments,
+    where the third arumnet is a minimum field width. The converted number
+    will be padded with blanks on the left if necessary to make it wide
+    enough.
 */
 
 #include <limits.h>
@@ -31,17 +18,19 @@
 
 #define STR_LEN     32
 
-void itoa(int n, char s[]);
+void itoa(int n, char s[], uint8_t w);
 void reverse(char s[]);
 
 int main(void) {
 
-    int n = INT_MIN;
+    int n = 255;
     char s[STR_LEN];
-    
-    itoa(n, s);
+    uint8_t padding = 8;
 
-    printf("The output of the itoa call using %d is %s.\n", n, s);
+    itoa(n, s, padding);
+
+    printf("The output of the itoa call using %d and a minimum padding of %d "
+        "is:\n[%s].\n", n, padding, s);
 
     return 0;
 }
@@ -53,7 +42,7 @@ int main(void) {
 
     Challenge 3-4: Ensure this works with the largest negative number!
 */
-void itoa(int n, char s[]) {
+void itoa(int n, char s[], uint8_t w) {
     int8_t sign = n < 0 ? -1 : 1;
 
     int8_t i = 0;
@@ -62,6 +51,18 @@ void itoa(int n, char s[]) {
         value = value < 0 ? -value : value; // Get abs value for char addition
         s[i++] = value + '0';
     } while ((n /= 10) != 0);   // Neg number / 10 = neg number
+
+    /*
+        I wonder if I'm misunderstanding this -- we're just adding some spaces
+        to do padding? I hope this is what the exercise intended. -A
+    */
+    uint8_t padding = w - i;
+    if (padding > 0) {
+        while (padding > 0) {
+            s[i++] = ' ';
+            padding--;
+        }
+    }
 
     if (sign < 0) {
         s[i++] = '-';
