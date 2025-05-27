@@ -89,14 +89,5 @@ double atof_sci(char s[]) {
         return expanded;
     }
 
-    /*
-        123.456 example
-        val = 123456.0
-        power = 1000.0
-        sign = 1
-
-        sign * val / power
-        1 * 123456.0 = 123456.0 / 1000.0 = 123.456
-    */
     return sign * val / power;
 }
