@@ -13,11 +13,16 @@
 */
 
 #include <limits.h>
+#include <stdint.h>
 #include <stdio.h>
 
-void itoa_recursive(int n);
+void itoa_recursive(long long int n);
 
 int main(void) {
+    itoa_recursive(LLONG_MIN);
+    putchar('\n');
+    itoa_recursive(LONG_MIN);
+    putchar('\n');
     itoa_recursive(INT_MIN);
     putchar('\n');
     itoa_recursive(CHAR_MIN);
@@ -34,20 +39,20 @@ int main(void) {
     n is a register because it's used a few times. Probably unncessary!
         -A
 */
-void itoa_recursive(register int n) {
-    char sign = n < 0 ? -1 : 1;
+void itoa_recursive(long long int n) {
+    int8_t sign = n < 0 ? -1 : 1;
 
     // Preface the number with a minus if it's negative
-    if (n < 0) {
+    if (sign < 0) {
         putchar('-');
     }
 
     // The digit formula will get the modulo and then make it positive.
-    char digit = (sign * (n % (sign * 10))) + '0';
+    int8_t digit = (sign * (n % (sign * 10))) + '0';
     
     // As long as n / 10 isn't 0, continue with a new n!
     if (n / 10) {
-        int div_n = n / 10;
+        long long int div_n = n / 10;
 
         /*
             div_n will only ever be negative on the first invocation of
